@@ -48,8 +48,11 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         rel="stylesheet" />
     <style>
+        html,
         body {
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         h1,
@@ -120,10 +123,10 @@
                     class="absolute top-0 left-1/2 transform -translate-x-1/2 border border-gray-300 dark:border-gray-700 px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-white dark:bg-gray-800 z-0">
                     Hello!
                 </div>
-                <h1 class="text-3xl md:text-5xl font-bold mb-0 mt-6 leading-tight">
+                <h1 class="text-3xl md:text-5xl font-bold mb-0 mt-8 leading-tight relative z-20">
                     I'm <span class="text-primary">Waqas</span>, Frontend Developer
                 </h1>
-                <div class="relative mt-2 inline-block">
+                <div class="relative -mt-10 md:-mt-16 inline-block">
                     <!-- Large Semi-circle (Dome) Background -->
                     <div
                         class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[380px] h-[190px] md:w-[550px] md:h-[275px] bg-primary rounded-t-full -z-10">
@@ -510,7 +513,7 @@
             </div>
         </div>
     </section>
-    <div class="bg-primary rotate-1 transform mx-[-20px] overflow-hidden py-4 shadow-lg mb-20">
+    <div class="bg-primary rotate-1 transform overflow-hidden py-4 shadow-lg mb-20 w-full relative">
         <div class="flex whitespace-nowrap animate-marquee text-white font-bold text-xl uppercase tracking-wider">
             <span class="mx-4 flex items-center gap-2">UI/UX Design <span
                     class="text-white material-symbols-outlined">diamond</span></span>
