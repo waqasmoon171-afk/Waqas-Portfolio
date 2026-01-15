@@ -178,93 +178,84 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="group relative flex flex-col h-[380px]">
-                    <!-- Stacked Background Layers -->
+                    <!-- Stacked Background Layers - Offset for 3D effect -->
                     <div
-                        class="absolute top-4 left-4 right-4 bottom-0 bg-white/5 rounded-[32px] z-0 transform scale-95 origin-bottom transition-all duration-500 group-hover:scale-100 group-hover:-translate-y-2">
-                    </div>
-                    <div
-                        class="absolute top-8 left-8 right-8 bottom-0 bg-white/5 rounded-[32px] z-0 transform scale-90 origin-bottom transition-all duration-500 group-hover:scale-95 group-hover:-translate-y-1">
+                        class="absolute top-0 right-[-10px] bottom-[-10px] left-[10px] bg-white/5 rounded-[32px] rounded-br-[80px] z-0 transition-all duration-500 group-hover:translate-x-2 group-hover:translate-y-2 opacity-60">
                     </div>
 
                     <!-- Main Card content -->
                     <div
-                        class="relative z-10 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-t-[32px] rounded-bl-[32px] rounded-br-[100px] overflow-hidden flex flex-col h-full hover:border-primary/30 transition-all duration-500">
+                        class="relative z-10 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-t-[32px] rounded-bl-[32px] rounded-br-[100px] overflow-hidden flex flex-col h-full hover:border-primary/30 transition-all duration-500 shadow-xl">
                         <div class="p-8 border-b border-white/5">
                             <h3 class="text-2xl font-bold text-white">UI/ UX Design</h3>
                         </div>
                         <div class="relative flex-1 p-6 flex items-center justify-center">
                             <div
-                                class="w-full h-60 bg-white/5 backdrop-blur-md border border-white/10 rounded-[32px] overflow-hidden relative shadow-inner group-hover:scale-[1.05] transition-transform duration-500">
+                                class="w-full h-60 bg-white/10 backdrop-blur-md border border-white/20 rounded-[32px] overflow-hidden relative shadow-2xl group-hover:scale-[1.02] transition-transform duration-500">
                                 <img alt="UI Design Preview" class="w-full h-full object-cover opacity-90"
                                     src="assets/services/ui-ux-clear.png" />
                             </div>
                         </div>
                     </div>
-                    <!-- Arrow Button - Overlapping main card logic -->
+                    <!-- Arrow Button - Fitted in corner -->
                     <button
-                        class="absolute -bottom-4 -right-4 w-16 h-16 bg-[#1A1F2B] rounded-full flex items-center justify-center group-hover:bg-primary transition-all duration-300 shadow-2xl border border-white/10 z-20">
+                        class="absolute bottom-0 right-0 w-20 h-20 bg-[#1A1F2B] rounded-tl-[32px] rounded-br-[32px] flex items-center justify-center group-hover:bg-primary transition-all duration-300 shadow-2xl border-t border-l border-white/10 z-20">
                         <span
-                            class="material-symbols-outlined text-white text-3xl group-hover:rotate-45 transition-transform duration-300">north_east</span>
+                            class="material-symbols-outlined text-white text-4xl group-hover:rotate-45 transition-transform duration-300">north_east</span>
                     </button>
                 </div>
                 <div class="group relative flex flex-col h-[380px]">
-                    <!-- Stacked Background Layers -->
+                    <!-- Stacked Background Layers - Offset for 3D effect -->
                     <div
-                        class="absolute top-4 left-4 right-4 bottom-0 bg-white/5 rounded-[32px] z-0 transform scale-95 origin-bottom transition-all duration-500 group-hover:scale-100 group-hover:-translate-y-2">
-                    </div>
-                    <div
-                        class="absolute top-8 left-8 right-8 bottom-0 bg-white/5 rounded-[32px] z-0 transform scale-90 origin-bottom transition-all duration-500 group-hover:scale-95 group-hover:-translate-y-1">
+                        class="absolute top-0 right-[-10px] bottom-[-10px] left-[10px] bg-white/5 rounded-[32px] rounded-br-[80px] z-0 transition-all duration-500 group-hover:translate-x-2 group-hover:translate-y-2 opacity-60">
                     </div>
 
                     <!-- Main Card content -->
                     <div
-                        class="relative z-10 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-t-[32px] rounded-bl-[32px] rounded-br-[100px] overflow-hidden flex flex-col h-full hover:border-primary/30 transition-all duration-500">
+                        class="relative z-10 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-t-[32px] rounded-bl-[32px] rounded-br-[100px] overflow-hidden flex flex-col h-full hover:border-primary/30 transition-all duration-500 shadow-xl">
                         <div class="p-8 border-b border-white/5">
                             <h3 class="text-2xl font-bold text-white">Web Design</h3>
                         </div>
                         <div class="relative flex-1 p-6 flex items-center justify-center">
                             <div
-                                class="w-full h-60 bg-white/5 backdrop-blur-md border border-white/10 rounded-[32px] overflow-hidden relative shadow-inner group-hover:scale-[1.05] transition-transform duration-500">
+                                class="w-full h-60 bg-white/10 backdrop-blur-md border border-white/20 rounded-[32px] overflow-hidden relative shadow-2xl group-hover:scale-[1.02] transition-transform duration-500">
                                 <img alt="Web Design Preview" class="w-full h-full object-cover opacity-90"
                                     src="assets/services/web-design-clear.png" />
                             </div>
                         </div>
                     </div>
-                    <!-- Arrow Button - Overlapping -->
+                    <!-- Arrow Button - Fitted in corner -->
                     <button
-                        class="absolute -bottom-4 -right-4 w-16 h-16 bg-[#1A1F2B] rounded-full flex items-center justify-center group-hover:bg-primary transition-all duration-300 shadow-2xl border border-white/10 z-20">
+                        class="absolute bottom-0 right-0 w-20 h-20 bg-[#1A1F2B] rounded-tl-[32px] rounded-br-[32px] flex items-center justify-center group-hover:bg-primary transition-all duration-300 shadow-2xl border-t border-l border-white/10 z-20">
                         <span
-                            class="material-symbols-outlined text-white text-3xl group-hover:rotate-45 transition-transform duration-300">north_east</span>
+                            class="material-symbols-outlined text-white text-4xl group-hover:rotate-45 transition-transform duration-300">north_east</span>
                     </button>
                 </div>
                 <div class="group relative flex flex-col h-[380px]">
-                    <!-- Stacked Background Layers -->
+                    <!-- Stacked Background Layers - Offset for 3D effect -->
                     <div
-                        class="absolute top-4 left-4 right-4 bottom-0 bg-white/5 rounded-[32px] z-0 transform scale-95 origin-bottom transition-all duration-500 group-hover:scale-100 group-hover:-translate-y-2">
-                    </div>
-                    <div
-                        class="absolute top-8 left-8 right-8 bottom-0 bg-white/5 rounded-[32px] z-0 transform scale-90 origin-bottom transition-all duration-500 group-hover:scale-95 group-hover:-translate-y-1">
+                        class="absolute top-0 right-[-10px] bottom-[-10px] left-[10px] bg-white/5 rounded-[32px] rounded-br-[80px] z-0 transition-all duration-500 group-hover:translate-x-2 group-hover:translate-y-2 opacity-60">
                     </div>
 
                     <!-- Main Card content -->
                     <div
-                        class="relative z-10 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[32px] overflow-hidden flex flex-col h-full hover:border-primary/30 transition-all duration-500">
+                        class="relative z-10 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-t-[32px] rounded-bl-[32px] rounded-br-[100px] overflow-hidden flex flex-col h-full hover:border-primary/30 transition-all duration-500 shadow-xl">
                         <div class="p-8 border-b border-white/5">
                             <h3 class="text-2xl font-bold text-white">Landing Page</h3>
                         </div>
                         <div class="relative flex-1 p-6 flex items-center justify-center">
                             <div
-                                class="w-full h-60 bg-white/5 backdrop-blur-md border border-white/10 rounded-[32px] overflow-hidden relative shadow-inner group-hover:scale-[1.05] transition-transform duration-500">
+                                class="w-full h-60 bg-white/10 backdrop-blur-md border border-white/20 rounded-[32px] overflow-hidden relative shadow-2xl group-hover:scale-[1.02] transition-transform duration-500">
                                 <img alt="Landing Page Preview" class="w-full h-full object-cover opacity-90"
                                     src="assets/services/landing-page.png" />
                             </div>
                         </div>
                     </div>
-                    <!-- Arrow Button - Overlapping -->
+                    <!-- Arrow Button - Fitted in corner -->
                     <button
-                        class="absolute -bottom-4 -right-4 w-16 h-16 bg-[#1A1F2B] rounded-full flex items-center justify-center group-hover:bg-primary transition-all duration-300 shadow-2xl border border-white/10 z-20">
+                        class="absolute bottom-0 right-0 w-20 h-20 bg-[#1A1F2B] rounded-tl-[32px] rounded-br-[32px] flex items-center justify-center group-hover:bg-primary transition-all duration-300 shadow-2xl border-t border-l border-white/10 z-20">
                         <span
-                            class="material-symbols-outlined text-white text-3xl group-hover:rotate-45 transition-transform duration-300">north_east</span>
+                            class="material-symbols-outlined text-white text-4xl group-hover:rotate-45 transition-transform duration-300">north_east</span>
                     </button>
                 </div>
             </div>
