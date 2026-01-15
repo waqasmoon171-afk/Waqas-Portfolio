@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Waqas - Frontend Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FD853A", // Orange color picked from image
+                        "primary-hover": "#e6722a",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#121212",
+                        "surface-light": "#F3F4F6",
+                        "surface-dark": "#1E1E1E",
+                        "text-light": "#333333",
+                        "text-dark": "#E5E5E5",
+                        "muted-light": "#6B7280",
+                        "muted-dark": "#9CA3AF",
+                    },
+                    fontFamily: {
+                        display: ["'Plus Jakarta Sans'", "sans-serif"],
+                        body: ["'Inter'", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        "xl": "20px",
+                        "2xl": "32px",
+                        "full": "9999px",
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop')", // Abstract gradient fallback
+                        'noise': "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')",
+                    }
+                },
+            },
+        };
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .display-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .text-stroke-title {
+            -webkit-text-stroke: 1px #FD853A;
+            color: transparent;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #121212;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FD853A;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased transition-colors duration-300">
+    <nav class="fixed top-2 left-0 right-0 z-50 px-4 md:px-0">
+        <div
+            class="max-w-4xl mx-auto bg-black/90 backdrop-blur-sm text-white rounded-full px-2 py-2 flex items-center justify-between shadow-lg">
+            <div class="flex items-center space-x-1 pl-1">
+                <a class="bg-primary hover:bg-primary-hover text-white px-6 py-2 rounded-full font-medium text-sm transition-colors"
+                    href="#">Home</a>
+                <a class="px-5 py-2 hover:text-primary transition-colors text-sm text-gray-300" href="#">About</a>
+                <a class="px-5 py-2 hover:text-primary transition-colors text-sm text-gray-300" href="#">Service</a>
+            </div>
+            <div class="flex items-center font-bold text-lg tracking-wider">
+                <span class="text-primary mr-1 material-symbols-outlined">dataset</span> JCREA
+            </div>
+            <div class="flex items-center space-x-1 pr-1">
+                <a class="px-5 py-2 hover:text-primary transition-colors text-sm text-gray-300" href="#">Resume</a>
+                <a class="px-5 py-2 hover:text-primary transition-colors text-sm text-gray-300" href="#">Project</a>
+                <a class="px-5 py-2 hover:text-primary transition-colors text-sm text-gray-300" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <header class="relative pt-12 pb-20 md:pt-16 md:pb-32 px-4 overflow-hidden">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+            <div class="hidden md:block md:col-span-3 text-left">
+                <span class="material-symbols-outlined text-4xl text-gray-400 mb-2">format_quote</span>
+                <p class="text-sm font-medium text-muted-light dark:text-muted-dark leading-relaxed">
+                    Waqas's Exceptional Frontend Developer ensure our website's success. Highly Recommended
+                </p>
+            </div>
+            <div class="col-span-1 md:col-span-6 text-center relative">
+                <div
+                    class="absolute top-2 left-1/2 transform -translate-x-1/2 border border-gray-300 dark:border-gray-700 px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-white dark:bg-gray-800 z-0">
+                    Hello!
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold mb-4 mt-8 leading-tight">
+                    I'm <span class="text-primary">Waqas</span>, Frontend Developer
+                </h1>
+                <div class="relative mt-8 inline-block">
+                    <!-- Large Semi-circle (Dome) Background -->
+                    <div
+                        class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[380px] h-[190px] md:w-[550px] md:h-[275px] bg-primary rounded-t-full -z-10">
+                    </div>
+                    <img alt="Waqas Portrait"
+                        class="relative z-10 w-[300px] md:w-[380px] h-auto object-contain mx-auto drop-shadow-2xl"
+                        src="./assets/hero-image.png" />
+                    <div
+                        class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex items-center bg-white/20 backdrop-blur-md p-2 rounded-full border border-white/30 shadow-lg w-max">
+                        <a class="bg-primary hover:bg-primary-hover text-white px-6 py-2 rounded-full font-medium text-sm flex items-center transition-colors"
+                            href="#portfolio">
+                            Portfolio <span class="material-symbols-outlined text-sm ml-1">north_east</span>
+                        </a>
+                        <a class="text-white hover:text-primary px-6 py-2 font-medium text-sm transition-colors"
+                            href="#contact">
+                            Hire me
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block md:col-span-3 text-right">
+                <div class="flex justify-end space-x-1 text-primary mb-2">
+                    <span class="material-symbols-outlined fill-current">star</span>
+                    <span class="material-symbols-outlined fill-current">star</span>
+                    <span class="material-symbols-outlined fill-current">star</span>
+                    <span class="material-symbols-outlined fill-current">star</span>
+                    <span class="material-symbols-outlined fill-current">star</span>
+                </div>
+                <h3 class="text-4xl font-bold mb-0">10 Years</h3>
+                <p class="text-sm text-muted-light dark:text-muted-dark font-medium">Experience</p>
+            </div>
+        </div>
+    </header>
+    <section class="bg-[#0f0f0f] text-white py-20 px-4 rounded-[40px] mx-2 md:mx-4 relative overflow-hidden"
+        id="services">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div
+                class="absolute top-0 left-1/3 w-[600px] h-[600px] bg-orange-500/30 rounded-full blur-[120px] mix-blend-screen opacity-70 animate-pulse">
+            </div>
+            <div
+                class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#FF5722]/30 rounded-full blur-[100px] mix-blend-screen opacity-60">
+            </div>
+            <div
+                class="absolute top-[20%] -left-[10%] w-[400px] h-[400px] bg-orange-400/20 rounded-full blur-[80px] mix-blend-screen opacity-50">
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 px-2">
+                <h2 class="text-3xl md:text-5xl font-bold">My <span class="text-primary">Services</span></h2>
+                <p class="max-w-md text-gray-400 text-sm md:text-right mt-4 md:mt-0 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo
+                    vulputate, bibendum sodales.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="group relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[32px] overflow-hidden flex flex-col h-[500px] hover:border-primary/30 transition-all duration-500">
+                    <div class="p-8 border-b border-white/5">
+                        <h3 class="text-2xl font-bold text-white">UI/ UX Design</h3>
+                    </div>
+                    <div class="relative flex-1 p-6 flex items-center justify-center">
+                        <div
+                            class="w-full h-full bg-[#f0f0f0] rounded-2xl overflow-hidden relative shadow-inner group-hover:scale-[1.02] transition-transform duration-500">
+                            <img alt="UI Design Preview" class="w-full h-full object-cover opacity-90"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqbuJkc3AsnTYZYAMTYdgMkKTcWxoBBbLx2r0Ic2TaJ8Vdhj924Dzc-uL_Kkr3xf2nymF8luANm0G9Ln0PYTqpYTuHYXymx2CoekG8XCiiMygKwK-cktXpOVzPY9pFnlCImj6MFlGPCj_ZkMqmLCPvuFLG-zRdUpDMtUbZs9VAPNpB7AWx_8yN7abPFRoNUxUFZ7kdXumqI61gJrOqzftcHNr7dfEKOo2canxV1gxM2aaynoTPiWY1c81aFrfVE4xCaWH_apw1yJEx" />
+                        </div>
+                        <button
+                            class="absolute bottom-8 right-8 w-16 h-16 bg-[#1A1F2B] rounded-full flex items-center justify-center group-hover:bg-primary transition-all duration-300 shadow-2xl border border-white/10 z-20">
+                            <span
+                                class="material-symbols-outlined text-white text-3xl group-hover:rotate-45 transition-transform duration-300">north_east</span>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="group relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[32px] overflow-hidden flex flex-col h-[500px] hover:border-primary/30 transition-all duration-500">
+                    <div class="p-8 border-b border-white/5">
+                        <h3 class="text-2xl font-bold text-white">Web Design</h3>
+                    </div>
+                    <div class="relative flex-1 p-6 flex items-center justify-center">
+                        <div
+                            class="w-full h-full bg-[#f0f0f0] rounded-2xl overflow-hidden relative shadow-inner group-hover:scale-[1.02] transition-transform duration-500">
+                            <img alt="Web Design Preview" class="w-full h-full object-cover opacity-90"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeR32spyGBj3yJ4uqKgUs4rijUaZDerC2y4ONNgxNlM2lHacW3KStWLdHiO4kGCp47WUmUvBMMTwvGQVP3hVb5zqS71mnQTCmJcSdzYP3fphjVcO_dNsLW9YkZqOTEBv6N9MB-PI4sxelXkmbaduTVCbUoC7xIqYZl-T-Kq1-ycoFGVG-XDi1__s_Tg5Up5ED4tNqR8rUH_A2Az02X05gTtvxvK6nrWxbzXS958ZTzxckGP0iWMngoptQnbyOnuJHw3MM3cfv3gLfP" />
+                        </div>
+                        <button
+                            class="absolute bottom-8 right-8 w-16 h-16 bg-[#1A1F2B] rounded-full flex items-center justify-center group-hover:bg-primary transition-all duration-300 shadow-2xl border border-white/10 z-20">
+                            <span
+                                class="material-symbols-outlined text-white text-3xl group-hover:rotate-45 transition-transform duration-300">north_east</span>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="group relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[32px] overflow-hidden flex flex-col h-[500px] hover:border-primary/30 transition-all duration-500">
+                    <div class="p-8 border-b border-white/5">
+                        <h3 class="text-2xl font-bold text-white">Landing Page</h3>
+                    </div>
+                    <div class="relative flex-1 p-6 flex items-center justify-center">
+                        <div
+                            class="w-full h-full bg-[#f0f0f0] rounded-2xl overflow-hidden relative shadow-inner group-hover:scale-[1.02] transition-transform duration-500">
+                            <img alt="Landing Page Preview" class="w-full h-full object-cover opacity-90"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiPZsk21oaRbUr7zPmOMB8VKUsQwTIer7JVrLNkoyKZ35xG7aviJjxRqkObv-CpfBmjUPBG0bpH0Fr0SbD9pceJD85tlvwR7dl-rCmxoUMfyvvMruLXAayPK2X1By7MhhRlJ-nccU1BmpysO_QlBkVvPr1lf-cazxsW8bE7Y9kTFeqKVNQ3asu5fEhASHz5A60WtHcQT9rCNBKVXdqqwp-jOBcuk-TXQ-9RYlx02ulYaEPdZJBtYdABvNzcjKUtYFkLjvMGG11Urze" />
+                        </div>
+                        <button
+                            class="absolute bottom-8 right-8 w-16 h-16 bg-[#1A1F2B] rounded-full flex items-center justify-center group-hover:bg-primary transition-all duration-300 shadow-2xl border border-white/10 z-20">
+                            <span
+                                class="material-symbols-outlined text-white text-3xl group-hover:rotate-45 transition-transform duration-300">north_east</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-12 space-x-3">
+                <span class="w-12 h-3 bg-primary rounded-full"></span>
+                <span
+                    class="w-3 h-3 bg-white/20 rounded-full hover:bg-white/40 cursor-pointer transition-colors"></span>
+                <span
+                    class="w-3 h-3 bg-white/20 rounded-full hover:bg-white/40 cursor-pointer transition-colors"></span>
+                <span
+                    class="w-3 h-3 bg-white/20 rounded-full hover:bg-white/40 cursor-pointer transition-colors"></span>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">My <span class="text-primary">Work
+                    Experience</span></h2>
+            <div class="relative">
+                <div
+                    class="absolute left-1/2 transform -translate-x-1/2 top-2 bottom-2 w-px border-l-2 border-dashed border-gray-300 dark:border-gray-700 hidden md:block">
+                </div>
+                <div class="space-y-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative items-start">
+                        <div class="md:text-right md:pr-12">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Cognizant, Mumbai</h3>
+                            <p class="text-sm text-gray-500 mt-1">Sep 2016 - July 2020</p>
+                        </div>
+                        <div
+                            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 top-1 items-center justify-center">
+                            <div
+                                class="w-4 h-4 bg-primary rounded-full border-4 border-white dark:border-background-dark shadow-sm ring-2 ring-primary/30">
+                            </div>
+                        </div>
+                        <div class="md:pl-12">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Experience Designer</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in
+                                justo vulputate, bibendum sodales.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative items-start">
+                        <div class="md:text-right md:pr-12">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Sugee Pvt limited, Mumbai</h3>
+                            <p class="text-sm text-gray-500 mt-1">Sep 2020 - July 2023</p>
+                        </div>
+                        <div
+                            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 top-1 items-center justify-center">
+                            <div
+                                class="w-4 h-4 bg-gray-800 dark:bg-white rounded-full border-4 border-white dark:border-background-dark shadow-sm">
+                            </div>
+                        </div>
+                        <div class="md:pl-12">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">UI/UX Designer</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in
+                                justo vulputate, bibendum sodales.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative items-start">
+                        <div class="md:text-right md:pr-12">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Cinetstox, Mumbai</h3>
+                            <p class="text-sm text-gray-500 mt-1">Sep 2023</p>
+                        </div>
+                        <div
+                            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 top-1 items-center justify-center">
+                            <div
+                                class="w-4 h-4 bg-primary rounded-full border-4 border-white dark:border-background-dark shadow-sm ring-2 ring-primary/30">
+                            </div>
+                        </div>
+                        <div class="md:pl-12">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Lead UX Designer</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 px-4 bg-surface-light dark:bg-surface-dark/50 rounded-[40px] mx-2 md:mx-4">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                <div
+                    class="absolute inset-0 bg-primary/20 rounded-full filter blur-3xl transform translate-y-10 scale-75">
+                </div>
+                <img alt="Waqas Pointing"
+                    class="relative z-10 mx-auto w-3/4 md:w-full object-cover drop-shadow-2xl mask-image-custom"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOIjgQdWdmAWDY2-pJH3DmlcGuAP7OgSgskq6B6NfVWzXH1TTZraxVQpQuQsEGl5CTLEQRDIHrCTbKKIw65FGAhA36yHCZbo8YCUMQ-9kxOBO7KPB5OUTS-OI2j2A4vSDkhT2Llp3auwihdeOWkKINS38XB70rTClWWR9ZLY-VGfNk2b_xLANQCRrbGfnBiNmJs5iA6rI0zAqo4VKlZpifaSPXDwF4MUxgqq6AkA0AxHME6of1mJw6ATYb7Fm69hH3SbUOu3_A1WBe" />
+                <div
+                    class="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-surface-light dark:from-surface-dark to-transparent z-20">
+                </div>
+            </div>
+            <div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Why <span class="text-primary">Hire me</span>?</h2>
+                <p class="text-muted-light dark:text-muted-dark mb-8 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim.
+                    Duis lacus nunc, posuere in justo vulputate, bibendum sodales.
+                </p>
+                <div class="grid grid-cols-2 gap-8 mb-10">
+                    <div>
+                        <h4 class="text-3xl font-bold">450+</h4>
+                        <p class="text-sm text-gray-500">Project Completed</p>
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-bold">450+</h4>
+                        <p class="text-sm text-gray-500">Project Completed</p>
+                    </div>
+                </div>
+                <a class="inline-block border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+                    href="#contact">
+                    Hire me
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 px-4" id="portfolio">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold leading-tight">Lets have a look at<br />my <span
+                        class="text-primary">Portfolio</span></h2>
+                <button
+                    class="bg-primary hover:bg-primary-hover text-white px-6 py-2 rounded-full text-sm font-medium mt-4 md:mt-0 transition-colors">See
+                    All</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="group cursor-pointer">
+                    <div
+                        class="bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden aspect-video relative shadow-lg">
+                        <img alt="Lirante Project"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0fm4GC2J53B8l5jScSZ8rr_kwB1zYFp1-psTutzJRJgkZtXcdtBfxIBQ7kosAzm9X1JD6qEI7hSHj0U6D6b729mfIMxM0xuiCNEcND8MCSw-DdS50mGGDPpxWOABUIWTGBhxorRSoee5qA3bSsbjMTojVrbxeE-x7MTHh_sLjYv_Sopdz1-g5W4s--tcBzpIlbeAlveG6BwbpPHVvLMRaTCDonOSFI3SKnDMLrvqC-KChLPHUcxIgM6VzGXXOM9Px3nk2O_rZsaBm" />
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div class="bg-white/20 backdrop-blur-sm p-3 rounded-full">
+                                <span class="material-symbols-outlined text-white">visibility</span>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white text-2xl font-bold drop-shadow-md">Lirante</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="group cursor-pointer hidden md:block">
+                    <div
+                        class="bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden aspect-video relative shadow-lg">
+                        <img alt="Lirante Project 2"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1uxaR_GO7gFnYUXwvB6h9fuLQ3jkxQ7JiBxWrljdOdF7KClNok_C_DDsLy2HQ53XiYATDl9SSQW9MGohipB7x8ENGOa5HeXFHlCzhXNe5gDEuxTTp_gol2oJZm8-QKyT86G9dg77hEgwXFWDegE0AW8P0nkLMdcBW2zzp_9I2LNR0mPhhj07C5nJH9BfTDQA8AmBYB364CfiDQF5C3Ti94KVuT51pZHXNiTeXOT7oIa8CazPwwCiihwuOO8X7Bz0mJrvMmLk6dRmD" />
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white text-2xl font-bold drop-shadow-md">Lirante</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mb-12 space-x-2">
+                <span class="w-8 h-2 bg-primary rounded-full"></span>
+                <span class="w-2 h-2 bg-gray-300 dark:bg-gray-700 rounded-full"></span>
+                <span class="w-2 h-2 bg-gray-300 dark:bg-gray-700 rounded-full"></span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button
+                    class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">Landing
+                    Page</button>
+                <button class="bg-gray-100 dark:bg-gray-700 px-6 py-2 rounded-full text-sm font-medium">Product
+                    Design</button>
+                <button
+                    class="bg-gray-100 dark:bg-gray-700 px-6 py-2 rounded-full text-sm font-medium">Animation</button>
+                <button
+                    class="bg-gray-100 dark:bg-gray-700 px-6 py-2 rounded-full text-sm font-medium">Glassmorphism</button>
+                <button class="bg-gray-100 dark:bg-gray-700 px-6 py-2 rounded-full text-sm font-medium">Cards</button>
+            </div>
+            <div class="text-center max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold flex items-center justify-center gap-2 mb-4">
+                    Lirante - Food Delivery Solution
+                    <button
+                        class="bg-primary text-white rounded-full p-1 w-8 h-8 flex items-center justify-center"><span
+                            class="material-symbols-outlined text-sm">north_east</span></button>
+                </h3>
+                <p class="text-muted-light dark:text-muted-dark text-sm leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas
+                    lobortis.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="bg-[#1A1A1A] text-white py-20 px-4 rounded-[40px] mx-2 md:mx-4 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+                <path d="M0 100 Q 50 0 100 100" fill="none" stroke="white" stroke-width="0.5"></path>
+                <path d="M0 80 Q 50 -20 100 80" fill="none" stroke="white" stroke-width="0.5"></path>
+                <path d="M0 60 Q 50 -40 100 60" fill="none" stroke="white" stroke-width="0.5"></path>
+            </svg>
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-block mb-4">
+                <span class="material-symbols-outlined text-primary text-3xl">flare</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Testimonials That<br />Speak to <span
+                    class="text-primary">My Results</span></h2>
+            <p class="text-gray-400 text-sm max-w-2xl mx-auto mb-12">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative">
+                    <span class="absolute top-4 right-4 text-6xl text-white/5 font-serif">"</span>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img alt="User" class="w-12 h-12 rounded-full border-2 border-primary"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZxLpQ-ZLI2cmoFIPQa4kl8LY_9jyHMQLDl-lJtpdnQPcq-biqolcHtEstF0FZxNmuyQi1gyexURXy1vg36d-82TZSKNpt5ol9Y9rRItcOPJwRe5g0noPutVGkeCjwb_1xvzRpkVzBGnrDs9oz5c0cW3LRa2O-5PcX8t4DuETBqzZ1YOpXUvZe-evluIbMTMGGqxuO1UOQqW8kkVHvO5veNZV8TkvmYtSjW5LesOHR76pTzJ0RqSE6wAd_oZz_yBvapiru0snDAd1x" />
+                        <div>
+                            <h4 class="font-bold text-sm">Fawzi Sayed</h4>
+                            <p class="text-xs text-gray-400">UI/UX Designer</p>
+                        </div>
+                    </div>
+                    <div class="flex text-primary text-sm mb-3">
+                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                        <span class="ml-2 text-white font-bold">5.0</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.
+                    </p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative">
+                    <span class="absolute top-4 right-4 text-6xl text-white/5 font-serif">"</span>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img alt="User" class="w-12 h-12 rounded-full border-2 border-primary"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMzDcp3zIsu1N99G_odvl8ctKLOmbnEA3OnHLKmt4FPOGeSo_363dn0GS460dcHf8r2lj8FTzHhN_8iYIES0fJ0FT2Z5BVs8jVir14u9TYC7EPe9lcv2D3qTjPJb1k0byHFE-3ZeS5cZAK173zaaE5uKOWpPNFgRdG8eionyLChstpNhu4fWseBIhJv_IVjNMKTGKzJ8EgZrsM9aR6S-wkbnWGj3D_JukyYjbQqAF1S8YDqMThGTS_v6ac-Or3b9UCFKjEKil0TSj5" />
+                        <div>
+                            <h4 class="font-bold text-sm">Jayesh Patil</h4>
+                            <p class="text-xs text-gray-400">UI/UX Designer</p>
+                        </div>
+                    </div>
+                    <div class="flex text-primary text-sm mb-3">
+                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                        <span class="ml-2 text-white font-bold">5.0</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 px-4 text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold mb-8">Have an Awsome Project<br />Idea? <span
+                    class="text-primary">Let's Discuss</span></h2>
+            <div
+                class="bg-white dark:bg-surface-dark shadow-xl rounded-full p-2 pl-6 flex items-center max-w-lg mx-auto border border-gray-100 dark:border-gray-700">
+                <span class="material-symbols-outlined text-primary mr-3">mail</span>
+                <input
+                    class="flex-1 bg-transparent border-none focus:ring-0 text-sm placeholder-gray-400 dark:text-white"
+                    placeholder="Enter Email Address" type="email" />
+                <button
+                    class="bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-full text-sm font-medium transition-colors">Send</button>
+            </div>
+            <div
+                class="flex justify-center gap-6 mt-8 text-[10px] md:text-xs text-gray-500 font-medium uppercase tracking-wide">
+                <div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">star</span> 4.9/5
+                    Average Ratings</div>
+                <div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">emoji_events</span>
+                    25+ Winning Awards</div>
+                <div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">verified</span>
+                    Certified Product Designer</div>
+            </div>
+        </div>
+    </section>
+    <div class="bg-primary rotate-1 transform mx-[-20px] overflow-hidden py-4 shadow-lg mb-20">
+        <div class="flex whitespace-nowrap animate-marquee text-white font-bold text-xl uppercase tracking-wider">
+            <span class="mx-4 flex items-center gap-2">UI/UX Design <span
+                    class="text-white material-symbols-outlined">diamond</span></span>
+            <span class="mx-4 flex items-center gap-2">App Design <span
+                    class="text-white material-symbols-outlined">diamond</span></span>
+            <span class="mx-4 flex items-center gap-2">Dashboard <span
+                    class="text-white material-symbols-outlined">diamond</span></span>
+            <span class="mx-4 flex items-center gap-2">Wireframe <span
+                    class="text-white material-symbols-outlined">diamond</span></span>
+            <span class="mx-4 flex items-center gap-2">User Research <span
+                    class="text-white material-symbols-outlined">diamond</span></span>
+            <span class="mx-4 flex items-center gap-2">UI/UX Design <span
+                    class="text-white material-symbols-outlined">diamond</span></span>
+            <span class="mx-4 flex items-center gap-2">App Design <span
+                    class="text-white material-symbols-outlined">diamond</span></span>
+            <span class="mx-4 flex items-center gap-2">Dashboard <span
+                    class="text-white material-symbols-outlined">diamond</span></span>
+            <span class="mx-4 flex items-center gap-2">Wireframe <span
+                    class="text-white material-symbols-outlined">diamond</span></span>
+        </div>
+    </div>
+    <section class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold">From my<br />blog post</h2>
+                <button
+                    class="bg-primary hover:bg-primary-hover text-white px-6 py-2 rounded-full text-sm font-medium transition-colors">See
+                    All</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group cursor-pointer">
+                    <div class="bg-[#A5A6F6] rounded-[30px] p-6 h-80 relative mb-6 overflow-hidden">
+                        <img alt="UI Art"
+                            class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0shQn4MtDEmNKf9cd1shCvHK1Um1HO64X-CzNhItfiP3xbZMxi9QnLe3cMLB2Wu6pXKnqo59Ab2y49wkMjv8ezIYGFwbnp9H4ERO8ElW7jPkxk4M7sA1cWeICH4u1W3kWhXjYHZJunZghq6V8YMjHXbz6rv1DNy8pPeW4CJZOZlYQ1iAJ-fDxnWv2Qlkb-dMXymK7MIh_jeMQnjN7jkib_l_G0ZioQ6o9vOyRCnqjlXIElk4rAD4vBzVLPn-r4XwXuG8EquKP0Ne-" />
+                        <div class="relative z-10 h-full flex flex-col justify-between">
+                            <div class="bg-white/30 backdrop-blur-md rounded-xl p-3 w-3/4 mx-auto shadow-lg mt-8">
+                                <div class="flex gap-2 mb-2">
+                                    <div class="w-8 h-8 rounded-full bg-blue-400"></div>
+                                    <div class="flex-1 space-y-1">
+                                        <div class="h-2 bg-gray-200 rounded w-full"></div>
+                                        <div class="h-2 bg-gray-200 rounded w-2/3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="absolute bottom-4 right-4 w-12 h-12 bg-black rounded-full flex items-center justify-center text-white group-hover:bg-primary transition-colors z-20">
+                            <span class="material-symbols-outlined">north_east</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs text-gray-500 mb-2">
+                        <span class="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">UI/ UX Design</span>
+                        <span>• Jayesh Patil</span>
+                        <span>• 10 Nov, 2023</span>
+                    </div>
+                    <h3 class="text-lg font-bold leading-tight group-hover:text-primary transition-colors">Design
+                        Unraveled: Behind the Scenes of UI/UX Magic</h3>
+                </div>
+                <div class="group cursor-pointer">
+                    <div
+                        class="bg-[#1E9E68] rounded-[30px] p-6 h-80 relative mb-6 overflow-hidden flex items-center justify-center">
+                        <h2 class="text-white text-4xl font-bold absolute top-6 left-6 z-10">sugee</h2>
+                        <img alt="Dashboard"
+                            class="w-3/4 shadow-2xl rounded-lg transform translate-y-8 group-hover:translate-y-6 transition-transform"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFF761OEGuJRmp3va5mzSjFJSLwJxnJS46WlQ9oBt2P81xV-Z7ajhSCLWzX0KC7Lwm472mIuzZMfyVusSqdpRUKOsSMbDmIsUUlFucjxCRRMq_k0AO10xklNH4m7tWMAJ6qvXVJouWBhWjH-FnDEDZZLz-GukR4C-RI8OobLR0HoiQAOZNVoBu1FeZEMfGL_8FKhcgNJRjXsvNbYAakMPAkuBfyFvVnfbHrydD53MjsvFPqNsUBx9eqCc6u-8OmQwF2WRhiyAnHXpR" />
+                        <button
+                            class="absolute bottom-4 right-4 w-12 h-12 bg-black rounded-full flex items-center justify-center text-white group-hover:bg-primary transition-colors z-20">
+                            <span class="material-symbols-outlined">north_east</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs text-gray-500 mb-2">
+                        <span class="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">App Design</span>
+                        <span>• Jayesh Patil</span>
+                        <span>• 09 Oct, 2023</span>
+                    </div>
+                    <h3 class="text-lg font-bold leading-tight group-hover:text-primary transition-colors">Sugee: Loan
+                        Management System for Rural Sector.</h3>
+                </div>
+                <div class="group cursor-pointer">
+                    <div class="bg-[#FBC02D] rounded-[30px] p-6 h-80 relative mb-6 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <img alt="Phone" class="h-full object-cover opacity-90"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMOXcyAS4fPc4JZ0GXmccTDLEhdp49iCaBjABrzJsBZpm0MC5jyivdu3KeaYGlxLobXRIrgRDkthXaE0TkO_Qo5B6y79yIKCUZt19QEAAFv2_Tp3Ne4gDAyUbqm2jiCAwxFnxvSj6lKMv-C_-OUEdZlAj5xljUDpuLlFErJbi73tCnX9sb0d11qDar3Eju9SlcYBNa3kzq4DKuJrlb32Hvzah0fRdbEEMJ0bNRUoXwWGj61WR55CWrDK4ta1t9hCXTgCHTylyQUk3i" />
+                        </div>
+                        <button
+                            class="absolute bottom-4 right-4 w-12 h-12 bg-black rounded-full flex items-center justify-center text-white group-hover:bg-primary transition-colors z-20">
+                            <span class="material-symbols-outlined">north_east</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs text-gray-500 mb-2">
+                        <span class="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">App Design</span>
+                        <span>• Jayesh Patil</span>
+                        <span>• 13 Aug, 2023</span>
+                    </div>
+                    <h3 class="text-lg font-bold leading-tight group-hover:text-primary transition-colors">Cinetrade:
+                        Innovative way to Invest in Digital Media</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-[#1A1A1A] text-white py-16 px-4 rounded-t-[40px] mt-10" id="contact">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold">Lets Connect there</h2>
+                <a class="bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-full font-medium flex items-center mt-6 md:mt-0 transition-colors"
+                    href="mailto:hello@example.com">
+                    Hire me <span class="material-symbols-outlined ml-2 text-sm">north_east</span>
+                </a>
+            </div>
+            <div class="border-t border-gray-800 pt-12 pb-8 grid grid-cols-1 md:grid-cols-12 gap-12">
+                <div class="md:col-span-5">
+                    <div class="flex items-center font-bold text-lg tracking-wider mb-6">
+                        <span class="text-primary mr-1 material-symbols-outlined">dataset</span> JCREA
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim.
+                        Sed lobortis orci elementum egestas lobortis.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#"><i class="text-white text-xs">Fb</i></a>
+                        <a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#"><i class="text-white text-xs">In</i></a>
+                        <a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#"><i class="text-white text-xs">Be</i></a>
+                        <a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#"><i class="text-white text-xs">Tw</i></a>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="font-bold mb-6 text-primary">Navigation</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a class="hover:text-white transition-colors" href="#">Home</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">About Us</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Service</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Resume</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Project</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="font-bold mb-6 text-primary">Contact</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li>+20 11 43 53 73 41</li>
+                        <li>fawzisayed122@gmail.com</li>
+                        <li>fawziuiux.com</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3">
+                    <h4 class="font-bold mb-6 text-primary">Get the latest information</h4>
+                    <div class="relative">
+                        <input
+                            class="w-full bg-white text-gray-900 rounded-full py-3 px-4 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                            placeholder="Email Address" type="email" />
+                        <button
+                            class="absolute right-1 top-1 bottom-1 bg-primary hover:bg-primary-hover w-10 rounded-full flex items-center justify-center transition-colors">
+                            <span class="material-symbols-outlined text-white text-sm">send</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>Copyright © 2023 Finwzulux. All Rights Reserved.</p>
+                <div class="mt-2 md:mt-0 space-x-4">
+                    <a class="hover:text-white" href="#">User Terms &amp; Conditions</a>
+                    <a class="hover:text-white" href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <style>
+        .mask-image-b {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+    </style>
+</body>
+
+</html>
